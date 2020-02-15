@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace publisher_api.Controllers
 {
   [ApiController]
-  [Route("[controller]")]
+  [Route("api/[controller]")]
   public class ValuesController : ControllerBase
   {
 
@@ -16,10 +16,11 @@ namespace publisher_api.Controllers
       return new string[] { "value1", "value2" };
     }
 
+    // POST api/values
     [HttpPost]
-    public IActionResult Post([FromBody] string payload)
+    public IActionResult Post(string payload)
     {
-      return Ok("{\"success\": \"true\"}");
+      return Ok(new { sucess = true });
     }
   }
 }
