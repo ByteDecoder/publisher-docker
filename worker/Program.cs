@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace worker {
-  class Program {
+  internal class Program {
     public static async Task PostMessage(string postData) {
       var json = JsonConvert.SerializeObject(postData);
       var content = new StringContent(json, Encoding.UTF8, "application/json");
@@ -20,7 +20,8 @@ namespace worker {
     }
 
     static void Main() {
-      Console.WriteLine("Hello World!");
+      Console.WriteLine("Posting a message!");
+      PostMessage("Test Message").Wait();
     }
   }
 }
