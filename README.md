@@ -1,5 +1,14 @@
 ﻿# publisher-docker
 
+After pulling the project from github run:
+
+```bash
+$ dotnet core restore
+```
+
+Use VSCode, Visual Studio for Windows or MacOSX.
+
+The docker containers, are linux containers, no Windows containers
 
 ## Running Web service
 
@@ -36,7 +45,7 @@ $ docker build -t my_worker .
 $ docker run my_publisher_api 
 ```
 
-## Docker - ELimnating stopped containers
+## Docker - Eliminating stopped containers
 
 ```bash
 $ docker system prune
