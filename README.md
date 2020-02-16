@@ -18,3 +18,9 @@ $  dotnet run --project .\worker\
 ```bash
 $ docker build -t my_publisher_api .
 ```
+
+## Docker - ELimnating stopped containers
+
+```bash
+$ docker system prune
+```
