@@ -1,9 +1,9 @@
 
 using Microsoft.AspNetCore.Mvc;
-using publisher_api.Services;
+using PublisherApi.Services;
 using System;
 
-namespace publisher_api.Controllers {
+namespace PublisherApi.Controllers {
   [ApiController]
   [Route("api/[controller]")]
   public class ValuesController: ControllerBase {
@@ -16,7 +16,7 @@ namespace publisher_api.Controllers {
     public IActionResult Post(string payload) {
       Console.WriteLine($"Received a Post: {payload}");
       _messageService.Enqueue(payload);
-      return Ok(new { success = true });
+      return Ok(new { Success = true });
     }
   }
 }

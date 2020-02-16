@@ -4,7 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-namespace worker {
+namespace Worker {
   internal class Program {
     public static async Task PostMessage(string postData) {
       var json = JsonConvert.SerializeObject(postData);

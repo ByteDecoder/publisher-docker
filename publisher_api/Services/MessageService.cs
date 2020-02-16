@@ -3,7 +3,7 @@ using System;
 using System.Text;
 using RabbitMQ.Client;
 
-namespace publisher_api.Services {
+namespace PublisherApi.Services {
   public class MessageService: IMessageService {
     private readonly IModel _channel;
 

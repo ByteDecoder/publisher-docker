@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using publisher_api.Services;
+using PublisherApi.Services;
 
-namespace publisher_api {
+namespace PublisherApi {
   public class Startup {
     public Startup(IConfiguration configuration) {
       Configuration = configuration;
