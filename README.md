@@ -11,12 +11,14 @@ $ dotnet run --project .\publisher_api\
 
 ```bash
 $  dotnet run --project .\worker\
+$  docker run my_worker
 ```
 
 ## Creating docker image from Dockerfile
 
 ```bash
 $ docker build -t my_publisher_api .
+$ docker build -t my_worker .
 ```
 
 ## Docker - Start docker from an docker image

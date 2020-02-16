@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  publisher_api:
+    image: ${DOCKER_REGISTRY-}publisherapi
+    build:
+      context: .
+      dockerfile: publisher_api\Dockerfile
+
+  worker:
+    image: ${DOCKER_REGISTRY-}worker
+    build:
+      context: .
+      dockerfile: worker\Dockerfile
+
