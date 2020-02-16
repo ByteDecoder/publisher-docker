@@ -2,14 +2,16 @@ version: '3.4'
 
 services:
   publisher_api:
-    image: ${DOCKER_REGISTRY-}publisherapi
+    image: my_publisher_api:latest
     build:
-      context: .
-      dockerfile: publisher_api\Dockerfile
+      context: ./publisher_api
+      dockerfile: Dockerfile
 
   worker:
-    image: ${DOCKER_REGISTRY-}worker
+    image: my_worker:latest
+    depends_on:
+      - "publisher_api"
     build:
-      context: .
-      dockerfile: worker\Dockerfile
+      context: ./worker
+      dockerfile: Dockerfile
 
