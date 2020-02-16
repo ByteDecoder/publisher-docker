@@ -1,19 +1,22 @@
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-nanoserver-1903 AS base
 WORKDIR /app
+EXPOSE 80
+EXPOSE 443
 
 # Copy csproj and restore as distinct layers
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1-nanoserver-1903 AS build
+WORKDIR /src
 COPY *.csproj ./
 RUN dotnet restore
 
-# Copy everthing else and build
 COPY . ./
-RUN dotnet publish -c Release -o out
+#WORKDIR "/src/publisher_api"
+RUN dotnet build -c Release -o /app/build
 
-# Build runtime image
-FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS runtime
+FROM build AS publish
+RUN dotnet publish -c Release -o /app/publish
 
+FROM base AS final
 WORKDIR /app
-
-COPY --from=build /app/out .
-
-ENTRYPOINT ["dotnet", "publisher_api"]
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "publisher_api.dll"]
