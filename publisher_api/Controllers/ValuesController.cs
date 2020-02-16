@@ -1,22 +1,22 @@
 
-using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using publisher_api.Services;
+using System;
 
 namespace publisher_api.Controllers {
   [ApiController]
   [Route("api/[controller]")]
   public class ValuesController: ControllerBase {
+    private readonly IMessageService _messageService;
 
-    // GET api/values
-    [HttpGet]
-    public ActionResult<IEnumerable<string>> Get() {
-      return new[] { "value1", "value2" };
-    }
+    public ValuesController(IMessageService messageService) => this._messageService = messageService;
 
     // POST api/values
     [HttpPost]
     public IActionResult Post(string payload) {
-      return Ok(new { sucess = true });
+      Console.WriteLine($"Received a Post: {payload}");
+      _messageService.Enqueue(payload);
+      return Ok(new { success = true });
     }
   }
 }
