@@ -24,3 +24,12 @@ $ docker build -t my_publisher_api .
 ```bash
 $ docker system prune
 ```
+
+## Docker - Display all container && images
+
+```bash
+$ docker images ls
+$ docker container ls
+$ docker ps -a
+$ docker rmi <image_id>
+```
