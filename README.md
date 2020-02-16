@@ -7,6 +7,15 @@
 $ dotnet run --project .\publisher_api\ 
 ```
 
+# Starting docker compose
+
+Execute at docker-compose.yml path, the next command in the terminal
+
+```bash
+$ docker-compose up --build 
+$ docker-compose down
+```
+
 ## Running the worker
 
 ```bash
