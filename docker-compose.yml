@@ -4,6 +4,8 @@ services:
   publisher_api:
     build: ./publisher_api
     restart: always
+    depends_on:
+      - "rabbitmq"
 
   worker:
     build: ./worker
