@@ -1,0 +1,10 @@
+﻿// This file is used by Code Analysis to maintain SuppressMessage
+// attributes that are applied to this project.
+// Project-level suppressions either have no target or are given
+// a specific target and scoped to a namespace, type, member, etc.
+
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Build", "CA1303:Method 'MessageService.MessageService()' passes a literal string as parameter 'value' of a call to 'void Console.WriteLine(string value)'. Retrieve the following string(s) from a resource table instead: \"About to connect to RabbitMQ\".", Justification = "<Pending>", Scope = "member", Target = "~M:PublisherApi.Services.MessageService.#ctor")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Build", "CA1303:Method 'bool MessageService.Enqueue(string message)' passes a literal string as parameter 'format' of a call to 'void Console.WriteLine(string format, object arg0)'. Retrieve the following string(s) from a resource table instead: \" [x] Published {0} to RabbitMQ\".", Justification = "<Pending>", Scope = "member", Target = "~M:PublisherApi.Services.MessageService.Enqueue(System.String)~System.Boolean")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Build", "CA1822:Member Configure does not access instance data and can be marked as static (Shared in VisualBasic)", Justification = "<Pending>", Scope = "member", Target = "~M:PublisherApi.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Build", "CA1822:Member ConfigureServices does not access instance data and can be marked as static (Shared in VisualBasic)", Justification = "<Pending>", Scope = "member", Target = "~M:PublisherApi.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Build", "CA1052:Type 'Program' is a static holder type but is neither static nor NotInheritable", Justification = "<Pending>", Scope = "type", Target = "~T:PublisherApi.Program")]

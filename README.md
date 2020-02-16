@@ -10,6 +10,12 @@ Use VSCode, Visual Studio for Windows or MacOSX.
 
 The docker containers, are linux containers, no Windows containers
 
+
+## Swagger API documentation
+
+browse
+http://localhost:<port>/swagger
+
 ## Running Web service
 
 ```bash
