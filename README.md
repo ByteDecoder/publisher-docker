@@ -19,6 +19,12 @@ $  dotnet run --project .\worker\
 $ docker build -t my_publisher_api .
 ```
 
+## Docker - Start docker from an docker image
+
+```bash
+$ docker run my_publisher_api 
+```
+
 ## Docker - ELimnating stopped containers
 
 ```bash
