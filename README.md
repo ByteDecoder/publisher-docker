@@ -11,6 +11,18 @@ Use VSCode, Visual Studio for Windows or MacOSX.
 The docker containers, are linux containers, no Windows containers
 
 
+## Eunning the Project
+
+```bash
+$ docker-compose up --build
+```
+
+## RabbitMQ Managment Console
+
+With the docker compose running, open this URL in your web browser. Credentetials **guest/guest**
+
+*http://localhost:15672*
+
 ## Swagger API documentation
 
 browse
