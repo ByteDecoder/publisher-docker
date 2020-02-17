@@ -6,7 +6,9 @@ EXPOSE 443
 # Copy csproj and restore as distinct layers
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-alpine AS build
 WORKDIR /src
-COPY *.csproj ./
+COPY ./*.csproj ./
+COPY ../UtilsLibrary/*.csproj ./
+# COPY *.csproj ./
 RUN dotnet restore
 
 COPY . ./
