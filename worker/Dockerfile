@@ -8,7 +8,7 @@ FROM mcr.microsoft.com/dotnet/core/sdk:3.1-alpine AS build
 WORKDIR /src
 COPY ./Worker/*.csproj ./Worker/
 COPY ./UtilsLibrary/*.csproj ./UtilsLibrary/
-# COPY *.csproj ./
+
 RUN dotnet restore ./Worker 
 RUN dotnet restore ./UtilsLibrary
 
