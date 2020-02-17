@@ -4,11 +4,17 @@ services:
   publisher_api:
     build: ./PublisherApi
     restart: always
+    labels:
+      NAME: "my_publisher_api"
     depends_on:
       - "rabbitmq"
 
   worker:
-    build: ./Worker
+    build: 
+      context: .
+      dockerfile: ./Worker/Dockerfile
+    labels:
+      NAME: "my_worker"
     restart: always
     depends_on:
       - "publisher_api"

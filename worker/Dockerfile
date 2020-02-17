@@ -6,17 +6,18 @@ EXPOSE 443
 # Copy csproj and restore as distinct layers
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-alpine AS build
 WORKDIR /src
-COPY ./*.csproj ./
-COPY ../UtilsLibrary/*.csproj ./
+COPY ./Worker/*.csproj ./Worker/
+COPY ./UtilsLibrary/*.csproj ./UtilsLibrary/
 # COPY *.csproj ./
-RUN dotnet restore
+RUN dotnet restore ./Worker 
+RUN dotnet restore ./UtilsLibrary
 
+# Copy everthing else and build
 COPY . ./
-#WORKDIR "/src/publisher_api"
-RUN dotnet build -c Release -o /app/build
+RUN dotnet build ./Worker -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish -c Release -o /app/publish
+RUN dotnet publish ./Worker -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app

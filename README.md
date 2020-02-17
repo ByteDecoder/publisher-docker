@@ -42,7 +42,7 @@ $  docker run my_worker
 
 ```bash
 $ docker build -t my_publisher_api .
-$ docker build -t my_worker .
+$ docker build -f ./Dockerfile -t my_worker ..
 ```
 
 ## Docker - Start docker from an docker image
