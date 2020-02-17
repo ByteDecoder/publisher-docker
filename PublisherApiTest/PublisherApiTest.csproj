@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\publisher_api\PublisherApi.csproj" />
+    <ProjectReference Include="..\PublisherApi\PublisherApi.csproj" />
   </ItemGroup>
 
 </Project>
