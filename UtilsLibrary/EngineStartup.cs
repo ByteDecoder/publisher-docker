@@ -4,10 +4,10 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 
 namespace Worker {
-  public static class Startup {
+  public static class EngineStartup {
     private static readonly ContainerBuilder Container;
 
-    static Startup() => Container = new ContainerBuilder();
+    static EngineStartup() => Container = new ContainerBuilder();
 
     public static IServiceProvider Services { get; private set; }
 
@@ -23,9 +23,7 @@ namespace Worker {
 
     public static void DisposeServices() {
       if(Services == null) return;
-      if(Services is IDisposable) {
-        ((IDisposable)Services).Dispose();
-      }
+      if(Services is IDisposable service) service.Dispose();
     }
   }
 }
