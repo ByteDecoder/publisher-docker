@@ -1,4 +1,7 @@
-﻿# publisher-docker
+[![Maintainability](https://api.codeclimate.com/v1/badges/8cf4a142b799b3d10d37/maintainability)](https://codeclimate.com/github/ByteDecoder/publisher-docker/maintainability)
+
+
+# publisher-docker
 
 After pulling the project from github run:
 
